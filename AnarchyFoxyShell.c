@@ -23,10 +23,14 @@ void displayLogo()
 // Function to parse the input command and arguments
 void parseCommand(const char* input, char* command, char** arguments)
 {
+    // Make a non-const copy of the input string
+    char inputCopy[MAX_COMMAND_LENGTH];
+    strcpy(inputCopy, input);
+
     char* token;
     int argIndex = 0;
 
-    token = strtok(input, " \t\n\r\f\v");
+    token = strtok(inputCopy, " \t\n\r\f\v");
     strcpy(command, token);
 
     while (token != NULL)
