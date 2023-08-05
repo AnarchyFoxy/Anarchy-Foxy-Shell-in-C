@@ -12,7 +12,7 @@ shell.i: AnarchyFoxyShell.c
 		gcc -E AnarchyFoxyShell.c >shell.i
 
 shell.s: AnarchyFoxyShell.c
-		gcc -S -o shell AnarchyFoxyShell.c
+		gcc -S -o shell.s AnarchyFoxyShell.c
 
 # adding verbose for seeing all command line
 verbose:
@@ -20,4 +20,4 @@ verbose:
 
 # cleaning after compilation
 clean:
-		rm -f shell shell.i shell.s shell.o shell.map
+		rm -f shell shell.i shell.s shell.o shell.map shell.lst

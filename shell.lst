@@ -1,0 +1,444 @@
+GAS LISTING /tmp/cchb99Qk.s 			page 1
+
+
+   1              		.file	"AnarchyFoxyShell.c"
+   2              		.text
+   3              		.section	.rodata
+   4              		.align 8
+   5              	.LC0:
+   6 0000 20202020 		.string	"    __    _  _    __    ____   ___  _   _  _  _    ____  _____  _  _  _  _ "
+   6      5F5F2020 
+   6      20205F20 
+   6      205F2020 
+   6      20205F5F 
+   7 004c 00000000 		.align 8
+   8              	.LC1:
+   9 0050 2020202F 		.string	"   /__\\  ( \\( )  /__\\  (  _ \\ / __)( )_( )( \\/ )  ( ___)(  _  )( \\/ )( \\/ )"
+   9      5F5F5C20 
+   9      2028205C 
+   9      28202920 
+   9      202F5F5F 
+  10 009c 00000000 		.align 8
+  11              	.LC2:
+  12 00a0 20202F28 		.string	"  /(__)\\  )  (  /(__)\\  )   /( (__  ) _ (  \\  /    )__)  )(_)(  )  (  \\  / "
+  12      5F5F295C 
+  12      20202920 
+  12      20282020 
+  12      2F285F5F 
+  13 00ec 00000000 		.align 8
+  14              	.LC3:
+  15 00f0 20285F5F 		.string	" (__)(__)(_)\\_)(__)(__)(_)\\_) \\___)(_) (_) (__)   (__)  (_____)(_/\\_) (__)  "
+  15      29285F5F 
+  15      29285F29 
+  15      5C5F2928 
+  15      5F5F2928 
+  16 013d 000000   		.align 8
+  17              	.LC4:
+  18 0140 2020205F 		.string	"   ___  _   _  ____  __    __   "
+  18      5F5F2020 
+  18      5F202020 
+  18      5F20205F 
+  18      5F5F5F20 
+  19 0161 00000000 		.align 8
+  19      000000
+  20              	.LC5:
+  21 0168 202F205F 		.string	" / __)( )_( )( ___)(  )  (  )  "
+  21      5F292820 
+  21      295F2820 
+  21      2928205F 
+  21      5F5F2928 
+  22              		.align 8
+  23              	.LC6:
+  24 0188 205C5F5F 		.string	" \\__ \\ ) _ (  )__)  )(__  )(__ "
+  24      205C2029 
+  24      205F2028 
+  24      2020295F 
+  24      5F292020 
+  25              		.align 8
+  26              	.LC7:
+  27 01a8 20285F5F 		.string	" (___/(_) (_)(____)(____)(____)"
+  27      5F2F285F 
+GAS LISTING /tmp/cchb99Qk.s 			page 2
+
+
+  27      2920285F 
+  27      29285F5F 
+  27      5F5F2928 
+  28              		.text
+  29              		.globl	displayLogo
+  30              		.type	displayLogo, @function
+  31              	displayLogo:
+  32              	.LFB6:
+  33              		.cfi_startproc
+  34 0000 55       		pushq	%rbp
+  35              		.cfi_def_cfa_offset 16
+  36              		.cfi_offset 6, -16
+  37 0001 4889E5   		movq	%rsp, %rbp
+  38              		.cfi_def_cfa_register 6
+  39 0004 BF000000 		movl	$.LC0, %edi
+  39      00
+  40 0009 E8000000 		call	puts
+  40      00
+  41 000e BF000000 		movl	$.LC1, %edi
+  41      00
+  42 0013 E8000000 		call	puts
+  42      00
+  43 0018 BF000000 		movl	$.LC2, %edi
+  43      00
+  44 001d E8000000 		call	puts
+  44      00
+  45 0022 BF000000 		movl	$.LC3, %edi
+  45      00
+  46 0027 E8000000 		call	puts
+  46      00
+  47 002c BF000000 		movl	$.LC4, %edi
+  47      00
+  48 0031 E8000000 		call	puts
+  48      00
+  49 0036 BF000000 		movl	$.LC5, %edi
+  49      00
+  50 003b E8000000 		call	puts
+  50      00
+  51 0040 BF000000 		movl	$.LC6, %edi
+  51      00
+  52 0045 E8000000 		call	puts
+  52      00
+  53 004a BF000000 		movl	$.LC7, %edi
+  53      00
+  54 004f E8000000 		call	puts
+  54      00
+  55 0054 90       		nop
+  56 0055 5D       		popq	%rbp
+  57              		.cfi_def_cfa 7, 8
+  58 0056 C3       		ret
+  59              		.cfi_endproc
+  60              	.LFE6:
+  61              		.size	displayLogo, .-displayLogo
+  62              		.section	.rodata
+  63              	.LC8:
+  64 01c8 20090A0D 		.string	" \t\n\r\f\013"
+  64      0C0B00
+GAS LISTING /tmp/cchb99Qk.s 			page 3
+
+
+  65              		.text
+  66              		.globl	parseCommand
+  67              		.type	parseCommand, @function
+  68              	parseCommand:
+  69              	.LFB7:
+  70              		.cfi_startproc
+  71 0057 55       		pushq	%rbp
+  72              		.cfi_def_cfa_offset 16
+  73              		.cfi_offset 6, -16
+  74 0058 4889E5   		movq	%rsp, %rbp
+  75              		.cfi_def_cfa_register 6
+  76 005b 53       		pushq	%rbx
+  77 005c 4881EC98 		subq	$152, %rsp
+  77      000000
+  78              		.cfi_offset 3, -24
+  79 0063 4889BD78 		movq	%rdi, -136(%rbp)
+  79      FFFFFF
+  80 006a 4889B570 		movq	%rsi, -144(%rbp)
+  80      FFFFFF
+  81 0071 48899568 		movq	%rdx, -152(%rbp)
+  81      FFFFFF
+  82 0078 488B9578 		movq	-136(%rbp), %rdx
+  82      FFFFFF
+  83 007f 488D4580 		leaq	-128(%rbp), %rax
+  84 0083 4889D6   		movq	%rdx, %rsi
+  85 0086 4889C7   		movq	%rax, %rdi
+  86 0089 E8000000 		call	strcpy
+  86      00
+  87 008e C745E400 		movl	$0, -28(%rbp)
+  87      000000
+  88 0095 488D4580 		leaq	-128(%rbp), %rax
+  89 0099 BE000000 		movl	$.LC8, %esi
+  89      00
+  90 009e 4889C7   		movq	%rax, %rdi
+  91 00a1 E8000000 		call	strtok
+  91      00
+  92 00a6 488945E8 		movq	%rax, -24(%rbp)
+  93 00aa 488B55E8 		movq	-24(%rbp), %rdx
+  94 00ae 488B8570 		movq	-144(%rbp), %rax
+  94      FFFFFF
+  95 00b5 4889D6   		movq	%rdx, %rsi
+  96 00b8 4889C7   		movq	%rax, %rdi
+  97 00bb E8000000 		call	strcpy
+  97      00
+  98 00c0 EB47     		jmp	.L3
+  99              	.L4:
+ 100 00c2 BE000000 		movl	$.LC8, %esi
+ 100      00
+ 101 00c7 BF000000 		movl	$0, %edi
+ 101      00
+ 102 00cc E8000000 		call	strtok
+ 102      00
+ 103 00d1 488945E8 		movq	%rax, -24(%rbp)
+ 104 00d5 48837DE8 		cmpq	$0, -24(%rbp)
+ 104      00
+ 105 00da 742D     		je	.L3
+ 106 00dc 8B45E4   		movl	-28(%rbp), %eax
+GAS LISTING /tmp/cchb99Qk.s 			page 4
+
+
+ 107 00df 8D5001   		leal	1(%rax), %edx
+ 108 00e2 8955E4   		movl	%edx, -28(%rbp)
+ 109 00e5 4898     		cltq
+ 110 00e7 488D14C5 		leaq	0(,%rax,8), %rdx
+ 110      00000000 
+ 111 00ef 488B8568 		movq	-152(%rbp), %rax
+ 111      FFFFFF
+ 112 00f6 488D1C02 		leaq	(%rdx,%rax), %rbx
+ 113 00fa 488B45E8 		movq	-24(%rbp), %rax
+ 114 00fe 4889C7   		movq	%rax, %rdi
+ 115 0101 E8000000 		call	strdup
+ 115      00
+ 116 0106 488903   		movq	%rax, (%rbx)
+ 117              	.L3:
+ 118 0109 48837DE8 		cmpq	$0, -24(%rbp)
+ 118      00
+ 119 010e 75B2     		jne	.L4
+ 120 0110 8B45E4   		movl	-28(%rbp), %eax
+ 121 0113 4898     		cltq
+ 122 0115 488D14C5 		leaq	0(,%rax,8), %rdx
+ 122      00000000 
+ 123 011d 488B8568 		movq	-152(%rbp), %rax
+ 123      FFFFFF
+ 124 0124 4801D0   		addq	%rdx, %rax
+ 125 0127 48C70000 		movq	$0, (%rax)
+ 125      000000
+ 126 012e 90       		nop
+ 127 012f 488B5DF8 		movq	-8(%rbp), %rbx
+ 128 0133 C9       		leave
+ 129              		.cfi_def_cfa 7, 8
+ 130 0134 C3       		ret
+ 131              		.cfi_endproc
+ 132              	.LFE7:
+ 133              		.size	parseCommand, .-parseCommand
+ 134              		.section	.rodata
+ 135              	.LC9:
+ 136 01cf 65786974 		.string	"exit"
+ 136      00
+ 137              	.LC10:
+ 138 01d4 416E6172 		.string	"Anarchy Foxy Says Goodbye!"
+ 138      63687920 
+ 138      466F7879 
+ 138      20536179 
+ 138      7320476F 
+ 139              	.LC11:
+ 140 01ef 466F726B 		.string	"Fork error"
+ 140      20657272 
+ 140      6F7200
+ 141              	.LC12:
+ 142 01fa 436F6D6D 		.string	"Command execution error"
+ 142      616E6420 
+ 142      65786563 
+ 142      7574696F 
+ 142      6E206572 
+ 143              		.text
+ 144              		.globl	executeCommand
+ 145              		.type	executeCommand, @function
+GAS LISTING /tmp/cchb99Qk.s 			page 5
+
+
+ 146              	executeCommand:
+ 147              	.LFB8:
+ 148              		.cfi_startproc
+ 149 0135 55       		pushq	%rbp
+ 150              		.cfi_def_cfa_offset 16
+ 151              		.cfi_offset 6, -16
+ 152 0136 4889E5   		movq	%rsp, %rbp
+ 153              		.cfi_def_cfa_register 6
+ 154 0139 4883EC20 		subq	$32, %rsp
+ 155 013d 48897DE8 		movq	%rdi, -24(%rbp)
+ 156 0141 488975E0 		movq	%rsi, -32(%rbp)
+ 157 0145 488B45E8 		movq	-24(%rbp), %rax
+ 158 0149 BE000000 		movl	$.LC9, %esi
+ 158      00
+ 159 014e 4889C7   		movq	%rax, %rdi
+ 160 0151 E8000000 		call	strcmp
+ 160      00
+ 161 0156 85C0     		testl	%eax, %eax
+ 162 0158 7514     		jne	.L6
+ 163 015a BF000000 		movl	$.LC10, %edi
+ 163      00
+ 164 015f E8000000 		call	puts
+ 164      00
+ 165 0164 BF000000 		movl	$0, %edi
+ 165      00
+ 166 0169 E8000000 		call	exit
+ 166      00
+ 167              	.L6:
+ 168 016e E8000000 		call	fork
+ 168      00
+ 169 0173 8945FC   		movl	%eax, -4(%rbp)
+ 170 0176 837DFC00 		cmpl	$0, -4(%rbp)
+ 171 017a 790C     		jns	.L7
+ 172 017c BF000000 		movl	$.LC11, %edi
+ 172      00
+ 173 0181 E8000000 		call	perror
+ 173      00
+ 174 0186 EB41     		jmp	.L10
+ 175              	.L7:
+ 176 0188 837DFC00 		cmpl	$0, -4(%rbp)
+ 177 018c 7527     		jne	.L9
+ 178 018e 488B55E0 		movq	-32(%rbp), %rdx
+ 179 0192 488B45E8 		movq	-24(%rbp), %rax
+ 180 0196 4889D6   		movq	%rdx, %rsi
+ 181 0199 4889C7   		movq	%rax, %rdi
+ 182 019c E8000000 		call	execvp
+ 182      00
+ 183 01a1 BF000000 		movl	$.LC12, %edi
+ 183      00
+ 184 01a6 E8000000 		call	perror
+ 184      00
+ 185 01ab BF010000 		movl	$1, %edi
+ 185      00
+ 186 01b0 E8000000 		call	exit
+ 186      00
+ 187              	.L9:
+ 188 01b5 8B45FC   		movl	-4(%rbp), %eax
+GAS LISTING /tmp/cchb99Qk.s 			page 6
+
+
+ 189 01b8 BA000000 		movl	$0, %edx
+ 189      00
+ 190 01bd BE000000 		movl	$0, %esi
+ 190      00
+ 191 01c2 89C7     		movl	%eax, %edi
+ 192 01c4 E8000000 		call	waitpid
+ 192      00
+ 193              	.L10:
+ 194 01c9 90       		nop
+ 195 01ca C9       		leave
+ 196              		.cfi_def_cfa 7, 8
+ 197 01cb C3       		ret
+ 198              		.cfi_endproc
+ 199              	.LFE8:
+ 200              		.size	executeCommand, .-executeCommand
+ 201              		.section	.rodata
+ 202              	.LC13:
+ 203 0212 0A416E61 		.string	"\nAnarchy Foxy Shell :> "
+ 203      72636879 
+ 203      20466F78 
+ 203      79205368 
+ 203      656C6C20 
+ 204              	.LC14:
+ 205 022a 0A00     		.string	"\n"
+ 206              		.text
+ 207              		.globl	main
+ 208              		.type	main, @function
+ 209              	main:
+ 210              	.LFB9:
+ 211              		.cfi_startproc
+ 212 01cc 55       		pushq	%rbp
+ 213              		.cfi_def_cfa_offset 16
+ 214              		.cfi_offset 6, -16
+ 215 01cd 4889E5   		movq	%rsp, %rbp
+ 216              		.cfi_def_cfa_register 6
+ 217 01d0 4881EC30 		subq	$304, %rsp
+ 217      010000
+ 218 01d7 B8000000 		movl	$0, %eax
+ 218      00
+ 219 01dc E8000000 		call	displayLogo
+ 219      00
+ 220              	.L14:
+ 221 01e1 BF000000 		movl	$.LC13, %edi
+ 221      00
+ 222 01e6 B8000000 		movl	$0, %eax
+ 222      00
+ 223 01eb E8000000 		call	printf
+ 223      00
+ 224 01f0 488B1500 		movq	stdin(%rip), %rdx
+ 224      000000
+ 225 01f7 488D4590 		leaq	-112(%rbp), %rax
+ 226 01fb BE640000 		movl	$100, %esi
+ 226      00
+ 227 0200 4889C7   		movq	%rax, %rdi
+ 228 0203 E8000000 		call	fgets
+ 228      00
+ 229 0208 488D4590 		leaq	-112(%rbp), %rax
+GAS LISTING /tmp/cchb99Qk.s 			page 7
+
+
+ 230 020c BE000000 		movl	$.LC14, %esi
+ 230      00
+ 231 0211 4889C7   		movq	%rax, %rdi
+ 232 0214 E8000000 		call	strcspn
+ 232      00
+ 233 0219 C6440590 		movb	$0, -112(%rbp,%rax)
+ 233      00
+ 234 021e 488D95D0 		leaq	-304(%rbp), %rdx
+ 234      FEFFFF
+ 235 0225 488D8D20 		leaq	-224(%rbp), %rcx
+ 235      FFFFFF
+ 236 022c 488D4590 		leaq	-112(%rbp), %rax
+ 237 0230 4889CE   		movq	%rcx, %rsi
+ 238 0233 4889C7   		movq	%rax, %rdi
+ 239 0236 E8000000 		call	parseCommand
+ 239      00
+ 240 023b 488D95D0 		leaq	-304(%rbp), %rdx
+ 240      FEFFFF
+ 241 0242 488D8520 		leaq	-224(%rbp), %rax
+ 241      FFFFFF
+ 242 0249 4889D6   		movq	%rdx, %rsi
+ 243 024c 4889C7   		movq	%rax, %rdi
+ 244 024f E8000000 		call	executeCommand
+ 244      00
+ 245 0254 C745FC00 		movl	$0, -4(%rbp)
+ 245      000000
+ 246 025b EB2A     		jmp	.L12
+ 247              	.L13:
+ 248 025d 8B45FC   		movl	-4(%rbp), %eax
+ 249 0260 4898     		cltq
+ 250 0262 488B84C5 		movq	-304(%rbp,%rax,8), %rax
+ 250      D0FEFFFF 
+ 251 026a 4889C7   		movq	%rax, %rdi
+ 252 026d E8000000 		call	free
+ 252      00
+ 253 0272 8B45FC   		movl	-4(%rbp), %eax
+ 254 0275 4898     		cltq
+ 255 0277 48C784C5 		movq	$0, -304(%rbp,%rax,8)
+ 255      D0FEFFFF 
+ 255      00000000 
+ 256 0283 8345FC01 		addl	$1, -4(%rbp)
+ 257              	.L12:
+ 258 0287 8B45FC   		movl	-4(%rbp), %eax
+ 259 028a 4898     		cltq
+ 260 028c 488B84C5 		movq	-304(%rbp,%rax,8), %rax
+ 260      D0FEFFFF 
+ 261 0294 4885C0   		testq	%rax, %rax
+ 262 0297 75C4     		jne	.L13
+ 263 0299 E943FFFF 		jmp	.L14
+ 263      FF
+ 264              		.cfi_endproc
+ 265              	.LFE9:
+ 266              		.size	main, .-main
+ 267              		.ident	"GCC: (SUSE Linux) 13.1.1 20230720 [revision 9aac37ab8a7b919a89c6d64bc7107a8436996e93]"
+ 268              		.section	.note.GNU-stack,"",@progbits
+GAS LISTING /tmp/cchb99Qk.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 AnarchyFoxyShell.c
+     /tmp/cchb99Qk.s:31     .text:0000000000000000 displayLogo
+     /tmp/cchb99Qk.s:68     .text:0000000000000057 parseCommand
+     /tmp/cchb99Qk.s:146    .text:0000000000000135 executeCommand
+     /tmp/cchb99Qk.s:209    .text:00000000000001cc main
+
+UNDEFINED SYMBOLS
+puts
+strcpy
+strtok
+strdup
+strcmp
+exit
+fork
+perror
+execvp
+waitpid
+printf
+stdin
+fgets
+strcspn
+free
